@@ -1,0 +1,26 @@
+﻿@model HaberSitesi.Models.Yazarlar
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<center>
+    @using (Html.BeginForm("login", "AdminHome", FormMethod.Post)) //<form method="post">
+    {
+
+        @Html.ValidationSummary()
+
+        <div class="form-group">
+            Kullanıcı Adı
+           @Html.TextBoxFor(p => p.email, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            Şifre
+          @Html.TextBoxFor(p => p.sifre, new { @class = "form-control", @type = "password" })
+        </div>
+        <input type="submit" value="Giriş Yap" class="btn btn-primary"/>
+        <input type="button" class="btn btn-secondary" value ="Kayıt Ol" onclick="location.href = 'http://localhost:2749/Admin/Register';" />
+    }
+</center>
+

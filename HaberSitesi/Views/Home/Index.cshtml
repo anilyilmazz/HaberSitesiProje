@@ -1,0 +1,36 @@
+﻿@model HaberSitesi.ViewModels.HaberlerIndex
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="carousel">
+
+  @foreach (var haber in Model.Haber) { 
+     <input type="checkbox" class="faux-ui-facia">
+    <div class="slide"  annot="@haber.konu">
+        <img src="@haber.resim"  width="900">   
+    </div>
+  }
+
+
+</div>
+
+    @foreach (var haber in Model.Haber)
+    {
+
+        <div class="post-container">
+            <div class="post-thumb"><img class="myimg" src="@haber.resim" width="200" height="200" /></div>
+            <div class="post-content">
+                <h3 class="post-title">@haber.konu</h3>
+                <h5>@haber.tarih @haber.kategori</h5>
+                <p>@haber.icerik</p>
+            </div>
+        </div>
+
+
+    
+
+    }

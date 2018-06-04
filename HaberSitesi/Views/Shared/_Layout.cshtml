@@ -1,0 +1,81 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link href="~/Content/Styles/my.css" rel="stylesheet" />
+    <link href="~/Content/Styles/site.css" rel="stylesheet" />
+    <link href="~/Content/Styles/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Styles/admin.css" rel="stylesheet" />
+    <title>Haber Sitesi</title>
+    <style>
+
+#border {
+    border-style: ridge;
+    padding: 10px;
+}
+.post-container {
+    margin: 20px 20px 0 0;  
+    border: 5px solid #333;
+    overflow: auto
+}
+.post-thumb {
+    float: left
+}
+.post-thumb img {
+    display: block
+}
+.post-content {
+    margin-left: 220px
+}
+.post-title {
+    font-weight: bold;
+    font-size: 200%
+}
+.myimg{
+     border: 1px solid #333;
+}
+
+
+       
+    </style>
+
+
+</head>
+
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Haber Sitesi</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">AnaSayfa</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/Admin/AdminHome"><span class="glyphicon glyphicon-log-in"></span> Yönetim Paneli</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+        @RenderBody()
+
+    <div>
+
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,30 @@
+﻿@model HaberSitesi.Models.Yazarlar
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<center>
+    @using (Html.BeginForm("register", "AdminHome", FormMethod.Post)) //<form method="post">
+    {
+
+        @Html.ValidationSummary()
+
+        <div class="form-group">
+                                   
+            İsim  &nbsp&nbsp&nbsp @Html.TextBoxFor(p => p.isim, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            
+            Kullanıcı Adı  @Html.TextBoxFor(p => p.email, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            
+            Şifre  &nbsp&nbsp&nbsp @Html.TextBoxFor(p => p.sifre, new { @class = "form-control"})
+        </div>
+        <input type="submit" value="Kayıt Ol" class="btn btn-primary"/>
+    }
+</center>
+

@@ -1,0 +1,39 @@
+﻿@model HaberSitesi.ViewModels.NewsAdd
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<center>
+    <h2>HABER EKLE</h2>
+    @using (Html.BeginForm("Add", "News", FormMethod.Post)) //<form method="post">
+    {
+
+        @Html.ValidationSummary()
+        <div>
+            @*@Html.LabelFor(x => x.konu)*@
+            Konu  &nbsp&nbsp&nbsp @Html.TextBoxFor(x => x.konu, new { @class = "form-control" })
+        </div>
+        <br />
+        <div>
+            @*@Html.LabelFor(x => x.icerik)*@
+            İcerik  &nbsp&nbsp @Html.TextBoxFor(x => x.icerik, new { @class = "form-control" })
+
+        </div>
+        <br />
+        <div>
+            @*@Html.LabelFor(x => x.resim)*@
+            Resim  &nbsp&nbsp @Html.TextBoxFor(x => x.resim, new { @class = "form-control" })
+
+        </div>
+        <br />
+        <div>
+            @*@Html.LabelFor(x => x.kategori)*@
+            Kategori  @Html.TextBoxFor(x => x.kategori, new { @class = "form-control" })
+
+        </div>
+        <br />
+        <input type="submit" value="Haber Ekle" class="btn btn-primary"/>
+    }
+</center>
